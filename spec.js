@@ -1,5 +1,5 @@
 var request = require('supertest');
-
+// run tests with: mocha -R spec spec.js
 describe('loading express', function () {
     var server;
     beforeEach(function () {
@@ -10,7 +10,7 @@ describe('loading express', function () {
     });
     it('responds to /v1/launches/latest', function testLatest(done) {
         request(server)
-            .get('/space')
+            .get('/latest')
             .expect(200, done);
     });
 });
